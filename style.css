@@ -510,3 +510,219 @@ section:not(:first-of-type) {
   line-height: 25.2px;
   color: var(--color-primary);
 }
+
+.contact .contact__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact .contact__header h1 {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31.2px;
+  letter-spacing: -0.52px;
+  text-align: center;
+  color: var(--color-primary);
+  position: relative;
+}
+
+.contact h1::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  border-radius: 999px;
+  background-color: currentColor;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -4px;
+}
+
+.contact--grid {
+  width: 896px;
+  max-width: 896px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 48px 24px;
+  margin: 48px auto;
+}
+
+.contact--form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact--form .form--control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.contact--form label {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.7px;
+}
+
+.contact--form textarea {
+  height: 146px;
+  resize: none;
+}
+
+.contact--form :is(input, textarea) {
+  width: 100%;
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-bg-input);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  outline: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.contact--form :is(input, textarea):focus {
+  box-shadow: 0 0 0 4px var(--purple-150);
+}
+
+.contact--form :is(input, textarea)::placeholder {
+  color: #48445680;
+}
+
+.socials {
+  padding-top: 100px;
+}
+
+.socials .heading {
+  padding-bottom: 16px;
+}
+
+.contact--links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact--links li {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  align-items: center;
+}
+
+.contact--links li a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+  transition: opacity 0.2s ease;
+}
+.contact--links li a:hover {
+  opacity: 0.75;
+}
+
+.contact-bottom {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-bottom p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: var(--color-primary);
+}
+
+#formStatus {
+  margin: 0;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+#formStatus.is-success {
+  color: green;
+}
+
+#formStatus.is-error {
+  color: red;
+}
+
+footer {
+  border-radius: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 48px 40px !important;
+}
+
+footer h3 {
+  color: var(--color-text-primary);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.7px;
+}
+
+footer p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-primary);
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+footer ul a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-pill);
+  transition: opacity 0.275 ease-out;
+}
+
+footer ul a:hover {
+  opacity: 0.75;
+}
+
+/* ANIMATIONS */
+@keyframes progress-fill {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--value);
+  }
+}
+
+nav.shown {
+  transform: scaleY(100%);
+}
+
+nav.hidden {
+  height: 0;
+  transform: scaleY(0);
+}
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
+}
