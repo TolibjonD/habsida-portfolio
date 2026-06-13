@@ -6,9 +6,7 @@ namoyish etadi.
 
 ## 🔗 Jonli demo
 
-[Loyiha uchun havola](https://deluxe-gecko-ebf08e.netlify.app/)
-
-> Demo linkini o'zingiznikiga almashtiring (Vercel, Netlify, GitHub Pages va boshq.)
+[Loyihani ko'rish](https://deluxe-gecko-ebf08e.netlify.app/)
 
 ## ✨ Asosiy imkoniyatlar
 
@@ -26,37 +24,34 @@ namoyish etadi.
 
 - **HTML5** — semantic markup
 - **CSS3** — Custom Properties, Grid, Flexbox, animations, media queries
-- **JavaScript (Vanilla)** — DOM manipulation
+- **JavaScript (Vanilla)** — DOM manipulation, Fetch API
+- **Telegram Bot API** — aloqa formasi integratsiyasi
 - **Google Fonts** — Plus Jakarta Sans
 - **Git & GitHub** — versiya nazorati
 
 ## 📁 Loyiha tuzilishi
 
-\`\`\`
+```
 portfolio/
 ├── index.html
 ├── style.css
 ├── script.js
 ├── assets/
-│ ├── me.png
+│   └── me.png
 └── README.md
-\`\`\`
+```
 
 ## 🚀 Mahalliy ishga tushirish
 
-\`\`\`bash
-
+```bash
 # Repository ni klonlash
-
 git clone https://github.com/TolibjonD/habsida-portfolio.git
 
 # Papkaga kirish
-
-cd personal-portfolio
+cd habsida-portfolio
 
 # Brauzerda ochish (Live Server kabi extension tavsiya etiladi)
-
-\`\`\`
+```
 
 VS Code da **Live Server** kengaytmasi orqali ochish eng oson yo'l.
 
@@ -66,14 +61,17 @@ VS Code da **Live Server** kengaytmasi orqali ochish eng oson yo'l.
 - CSS Grid bilan murakkab layout yaratish
 - BEM nomlash konvensiyasi
 - Accessibility uchun ARIA atributlari va `:focus-visible`
+- Fetch API va async/await bilan ishlash
+- Telegram Bot API bilan integratsiya
 
 ## 👤 Muallif
 
-**Saidkodirov**
+**Saidkodirov Tolibjon**
 
 - Instagram: [@sad\_.mukhammad](https://www.instagram.com/sad_.mukhammad/)
 - Telegram: [@saad_muhammadxon](https://t.me/saad_muhammadxon)
 - YouTube: [@saidqodirov](https://www.youtube.com/@saidqodirov)
+- LinkedIn: [Tolibjon](https://www.linkedin.com/in/tolibjon/)
 
 ## 📄 Litsenziya
 
