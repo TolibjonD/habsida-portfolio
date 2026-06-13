@@ -29,4 +29,23 @@ document.addEventListener("DOMContentLoaded", () => {
       element.classList.add("active");
     });
   });
+
+  const buttons = [
+    { id: "plus", action: () => counter++ },
+    { id: "minus", action: () => counter-- },
+    { id: "reset", action: () => (counter = 0) },
+  ];
+
+  buttons.forEach(({ id, action }) => {
+    document.getElementById(id).addEventListener("click", () => {
+      action();
+      count.textContent = counter;
+    });
+  });
+
+  function updateCount() {
+    const length = characterField.value.length;
+    characterCount.textContent = length;
+    characterCount.classList.toggle("is-warning", length >= MAX_LENGTH);
+  }
 });
