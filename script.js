@@ -50,4 +50,60 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   characterField.addEventListener("input", updateCount);
   updateCount();
+  const BOT_TOKEN = "8991382346:AAH31ww7w_jfNt7zIzwpVzjtFr0u5dyT9PE";
+  const CHAT_ID = "8667140809";
+
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const submitBtn = form.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Yuborilmoqda...";
+    status.textContent = "";
+    status.className = "";
+
+    const formData = new FormData(form);
+
+    const text = `
+<b>Portfolio dan yangi xabar</b>
+
+<b>Ism:</b> ${formData.get("name")}
+<b>Email:</b> ${formData.get("email")}
+
+<b>Xabar:</b>
+${formData.get("message")}
+  `.trim();
+
+    try {
+      const response = await fetch(
+        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: text,
+            parse_mode: "HTML",
+          }),
+        },
+      );
+
+      if (response.ok) {
+        status.textContent = "Xabaringiz yuborildi! Tez orada javob beraman.";
+        status.className = "is-success";
+        form.reset();
+      } else {
+        throw new Error("Yuborishda xato");
+      }
+    } catch (error) {
+      status.textContent = "Xato yuz berdi. Keyinroq urinib ko'ring.";
+      status.className = "is-error";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit";
+    }
+  });
 });
