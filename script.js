@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   characterField.addEventListener('input', updateCount);
   updateCount();
-  const BOT_TOKEN = '8991382346:AAH31ww7w_jfNt7zIzwpVzjtFr0u5dyT9PE';
-  const CHAT_ID = '8667140809';
+  const BOT_TOKEN = import.meta.env.VITE_BOT_TOKEN;
+  const CHAT_ID = import.meta.env.VITE_CHAT_ID;
 
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
