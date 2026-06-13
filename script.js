@@ -48,4 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     characterCount.textContent = length;
     characterCount.classList.toggle("is-warning", length >= MAX_LENGTH);
   }
+  characterField.addEventListener("input", updateCount);
+  updateCount();
 });
