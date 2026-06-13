@@ -6,7 +6,7 @@ namoyish etadi.
 
 ## 🔗 Jonli demo
 
-[Loyihani ko'rish](https://deluxe-gecko-ebf08e.netlify.app/)
+[Loyihani ko'rish](https://saad-habsida.netlify.app/)
 
 ## ✨ Asosiy imkoniyatlar
 

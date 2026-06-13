@@ -1,6 +1,17 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import confetti from "canvas-confetti";
+
+AOS.init({
+  duration: 800,
+  easing: "ease-in-out",
+  once: true,
+  offset: 100,
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const navLink = document.querySelector("header nav");
-  navLinks = document.querySelectorAll("header nav ul li a");
+  const navLinks = document.querySelectorAll("header nav ul li a");
   const ctaButton = document.querySelector("header #cta-button");
   const navButton = document.getElementById("nav-button");
 
@@ -92,6 +103,18 @@ ${formData.get("message")}
       );
 
       if (response.ok) {
+        confetti({
+          particleCount: 60,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+        });
+        confetti({
+          particleCount: 60,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+        });
         status.textContent = "Xabaringiz yuborildi! Tez orada javob beraman.";
         status.className = "is-success";
         form.reset();
@@ -99,6 +122,8 @@ ${formData.get("message")}
         throw new Error("Yuborishda xato");
       }
     } catch (error) {
+      console.log(error);
+
       status.textContent = "Xato yuz berdi. Keyinroq urinib ko'ring.";
       status.className = "is-error";
     } finally {
