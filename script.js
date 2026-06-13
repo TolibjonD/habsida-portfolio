@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   navLinks.forEach((element) => {
     element.addEventListener('click', () => {
       if (isMobile()) {
-        navLink.classList.remove('shown'); // toggle emas, remove
-        ctaButton.classList.remove('shown'); // toggle emas, remove
+        navLink.classList.remove('shown');
+        ctaButton.classList.remove('shown');
       }
 
       navLinks.forEach((link) => link.classList.remove('active'));
