@@ -237,9 +237,11 @@ main {
 
 section:first-of-type {
   padding-top: 132px;
+  padding-bottom: 40px;
 }
 
 section:not(:first-of-type) {
+  padding-bottom: 40px;
   padding-top: 80px;
 }
 
@@ -838,5 +840,15 @@ nav.hidden {
   footer {
     padding: 36 20px;
     text-align: center;
+    background-color: var(--color-primary) !important;
+  }
+  footer h3 {
+    display: none;
+  }
+  footer p {
+    color: var(--color-text);
+  }
+  footer ul a {
+    color: var(--color-text-footer);
   }
 }

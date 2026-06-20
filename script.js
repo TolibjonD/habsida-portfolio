@@ -2,7 +2,6 @@ import confetti from 'canvas-confetti';
 
 document.addEventListener('DOMContentLoaded', () => {
   const navLink = document.querySelector('header nav');
-  const navLinks = document.querySelectorAll('header nav ul li a');
   const ctaButton = document.querySelector('header #cta-button');
   const navButton = document.getElementById('nav-button');
 
@@ -13,23 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const characterCount = document.getElementById('characterCount');
   const MAX_LENGTH = 120;
 
-  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
-
   navButton.addEventListener('click', () => {
     navLink.classList.toggle('shown');
     ctaButton.classList.toggle('shown');
-  });
-
-  navLinks.forEach((element) => {
-    element.addEventListener('click', () => {
-      if (isMobile()) {
-        navLink.classList.remove('shown');
-        ctaButton.classList.remove('shown');
-      }
-
-      navLinks.forEach((link) => link.classList.remove('active'));
-      element.classList.add('active');
-    });
   });
 
   const buttons = [
