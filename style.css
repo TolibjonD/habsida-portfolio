@@ -173,17 +173,21 @@ button {
 
 /* NAVBAR */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   right: 0;
   left: 0;
   top: 0;
-  padding: 24px 80px;
   background-color: var(--color-text);
   box-shadow: var(--shadow-light);
   z-index: 999;
+}
+header .inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 80px;
 }
 
 header #nav-button {
@@ -741,7 +745,7 @@ nav.hidden {
 
 /* MEDIA */
 @media (max-width: 768px) {
-  header {
+  header .inner {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
