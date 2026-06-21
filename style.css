@@ -91,6 +91,11 @@ button {
   transition: opacity 0.275s ease-out;
 }
 
+.button:disabled {
+  background-color: var(--slate-200);
+  cursor: not-allowed;
+}
+
 .button:hover {
   opacity: 0.9;
 }
@@ -618,20 +623,18 @@ section:not(:first-of-type) {
   gap: 8px;
 }
 
-.contact--links li {
+.contact--links li a {
   display: flex;
   gap: 12px;
   padding: 12px;
   align-items: center;
-}
-
-.contact--links li a {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: var(--color-text-secondary);
   transition: opacity 0.2s ease;
 }
+
 .contact--links li a:hover {
   opacity: 0.75;
 }
