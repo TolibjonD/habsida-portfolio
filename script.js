@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLink = document.querySelector('header nav');
   const ctaButton = document.querySelector('header #cta-button');
   const navButton = document.getElementById('nav-button');
+  const minusBtn = document.getElementById('minus');
 
   if (navButton && navLink) {
     navButton.addEventListener('click', () => {
@@ -12,29 +13,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   const count = document.getElementById('count');
+  if (minusBtn) {
+    minusBtn.disabled = true;
+  }
   if (count) {
     let counter = 0;
     const buttons = [
       {
-        id: "plus",
+        id: 'plus',
         action: () => {
-          document.getElementById("minus").disabled = false;
           counter++;
+          minusBtn.disabled = false;
         },
       },
       {
-        id: "minus",
-        action: () =>
-          counter > 0
-            ? counter--
-            : (document.getElementById("minus").disabled = true),
+        id: 'minus',
+        action: () => {
+          if (counter > 0) counter--;
+          minusBtn.disabled = counter === 0;
+        },
       },
-      { id: "reset", action: () => (counter = 0) },
+      {
+        id: 'reset',
+        action: () => {
+          counter = 0;
+          minusBtn.disabled = true;
+        },
+      },
     ];
 
     buttons.forEach(({ id, action }) => {
       const btn = document.getElementById(id);
-      if (btn) {  
+      if (btn) {
         btn.addEventListener('click', () => {
           action();
           count.textContent = counter;
